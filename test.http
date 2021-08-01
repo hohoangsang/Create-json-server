@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000/api
+
+
+###
+GET {{baseUrl}}/products
+
+# Add new Products
+### 
+POST {{baseUrl}}/products
+content-type: "application/json"
+
+{
+    "name": "Cynthia Vincent - 13\" Laptop Sleeve - Snake Border",
+    "brand": "Cynthia Vincent",
+    "categories": [
+        "Computers & Tablets",
+        "Laptop Accessories",
+        "Laptop Bags & Cases"
+    ],
+    "hierarchicalCategories": {
+        "lvl0": "Computers & Tablets",
+        "lvl1": "Computers & Tablets > Laptop Accessories",
+        "lvl2": "Computers & Tablets > Laptop Accessories > Laptop Bags & Cases"
+    },
+    "type": "Business cases",
+    "price": 9.99,
+    "price_range": "1 - 50",
+    "image": "https://cdn-demo.algolia.com/bestbuy/1591029_sb.jpg",
+    "rating": 1
+}
+
+# remove products
+###
+DELETE {{baseUrl}}/products
+Content-Type: "application/json"
+
+{
+    "id": 116
+}
